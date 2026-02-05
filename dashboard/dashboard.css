@@ -1,0 +1,82 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f7f9fc;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.card span {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.card.danger { border-left: 6px solid #ff4d4d; }
+.card.sos { border-left: 6px solid #ff9800; }
+
+.chart-section {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.support {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+/* ---------- Soft entrance animation ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeUp 0.6s ease-out;
+}
+
+/* Slight stagger */
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.15s; }
+.card:nth-child(3) { animation-delay: 0.25s; }
+.card span {
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.card span.updated {
+  transform: scale(1.08);
+}
+.chart-section {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.3s;
+}
+

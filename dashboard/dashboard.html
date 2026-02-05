@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SafeTalk – Personal Safety Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <script src="chart.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>🛡️ SafeTalk Dashboard</h1>
+    <p>Your private digital safety companion</p>
+  </header>
+
+  <section class="cards">
+    <div class="card">
+      <h3>Emails Scanned</h3>
+      <span id="emailsScanned">0</span>
+    </div>
+    <div class="card danger">
+      <h3>Harmful Messages Detected</h3>
+      <span id="detections">0</span>
+    </div>
+    <div class="card sos">
+      <h3>SOS Used</h3>
+      <span id="sos">0</span>
+    </div>
+  </section>
+
+  <section class="chart-section">
+    <canvas id="riskChart"></canvas>
+  </section>
+
+  <section class="support">
+    <h2>💬 A Note for You</h2>
+    <p id="supportMessage"></p>
+  </section>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

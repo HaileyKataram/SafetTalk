@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "SafeTalk – Gmail Protection",
+  "version": "1.0",
+  "description": "AI-powered harassment detection for Gmail Web",
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+
+  "host_permissions": [
+  "https://mail.google.com/*",
+  "https://www.youtube.com/*",
+  "https://www.instagram.com/*",
+  "http://127.0.0.1:9000/*",
+  "http://127.0.0.1:5000/*"
+],
+
+  "chrome_url_overrides": {
+  "newtab": "dashboard/dashboard.html"
+},
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+
+  "content_scripts": [
+    {"matches": [
+  "https://mail.google.com/*",
+  "https://www.youtube.com/*",
+  "https://www.instagram.com/*"
+]
+,
+      "js": ["content.js"]
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "options_page": "dashboard.html"
+  },
+
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/*",
+        "metrics.html",
+        "metrics.js"
+        
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+
